@@ -1,0 +1,40 @@
+.header {
+    background-color: var(--highlight-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 220px;
+}
+
+.title {
+    width: 100%;
+    max-width: var(--global-width);
+
+    padding: 0 var(--global-padding);
+    margin-top: -20px;
+}
+
+.focus {
+    font-family: "SUSE", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+h1.focus {
+    color: var(--lowlight-color);
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+strong.focus {
+    color: var(--lowlight-color);
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.subtitleBreak {
+    display: none;
+}
