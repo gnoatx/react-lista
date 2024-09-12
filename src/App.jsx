@@ -1,20 +1,33 @@
 import { useState } from "react";
 import { Header } from "./components/Header";
 import styles from "./styles/App.module.css";
+import { Button } from "./components/Button";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
-  const [tasks, setTasks] = useState([{
-    id: 1,
-    description: "Comprar pão",
-    isDone: false
-  }]);
+  const [tasks, setTasks] = useState([
+    {
+      description: "Comprar pão",
+      isDone: false
+    },
+  ]);
 
   function handleClick() {
     if (!inputValue) {
-      alert("A tarefa precisa de uma descrição")
+      alert("A tarefa não pode estar vazia.")
     }
+
+    const newTask = {
+      description: inputValue,
+      isDone: false,
+    }
+
+    setTasks((prevState) => [...prevState, newTask])
+
+    setInputValue('')
   }
+
+  
 
   return (
     <div>
@@ -31,9 +44,7 @@ function App() {
               value={inputValue}
             />
           </div>
-          <button className={styles.addTask} onClick={handleClick}>
-            <span>Cadastrar</span>
-          </button>
+          <Button onClick={handleClick}></Button>
         </section>
         {tasks.length === 0 && <p>Sem tarefas</p>}
 
